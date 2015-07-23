@@ -1,5 +1,8 @@
 language: java
 
+jdk:
+  - oraclejdk8
+
 env:
   global:
      - GH_REF: github.com/hscells/hscells.github.io.git
