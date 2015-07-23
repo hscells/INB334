@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<project name="INB334" default="test">
+
+   <target name="test">
+      <echo>INB334 Search Engine Technology</echo>
+   </target>
+
+</project>
