@@ -5,21 +5,26 @@ import collections
 data = open("terms.txt","r").read().splitlines();
 # from professor
 stopwords = open("stopwords.txt","r").read().splitlines();
-terms = []
-term_data = {}
+freq = []
 for line in data:
     line = line.split("\t")
-    if line[0] not in stopwords:
-        if line[1] not in term_data.keys():
-            term_data[line[1]] = 1
-        else:
-            term_data[line[1]] += 1
+    # if line[0] not in stopwords:
+    freq.append(int(line[1]))
 
-for k, v in term_data.items():
-    terms.append(int(k))
-terms = sorted(terms, reverse = True)
-plt.plot(terms)
-plt.title('Total Number of Term Occurance (No Stopwords)')
-plt.ylabel('Number of Terms')
-plt.xlabel('Total Occurance of Terms')
+num_terms = len(freq) + 0.0
+
+prob = [(n/num_terms) for n in freq]
+freq = sorted(freq, reverse=True)
+prob = sorted(prob, reverse=True)
+
+print freq[len(freq)-1]
+print prob[len(prob)-1]
+
+
+plt.scatter(freq, prob)
+plt.xlim(len(freq),0)
+plt.title('Probability of Word Occurance')
+plt.ylabel('Probability of Occurance')
+plt.xlabel('Rank')
+plt.grid(True)
 plt.show()
