@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Main {
-	
+	  
 	private static int uniqueTerms = 0;
 
 	public static void main(String[] args) throws IOException{

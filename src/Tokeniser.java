@@ -43,16 +43,20 @@ public class Tokeniser {
 		documents.keySet().forEach(document-> {
 			documents.get(document).forEach(lines -> {
 				lines = lines.replaceAll("<.*>", "");
-				lines = lines.replaceAll("[.,;:+=!@#$%^&*()`{}|\'\"<>]~?", "");
-				lines = lines.replaceAll("[\t\n]+", "");
+				lines = lines.replaceAll("[.,;:+=!@#$%^&*()`{}|\'\"<>~/\\[\\]\\?]+", " ");
+				lines = lines.replaceAll("[^A-Z^a-z]?[0-9]+[^A-Z^a-z]?", " " );
 				lines = lines.replaceAll(" +", " ");
+				lines = lines.replaceAll("\t", " ");
+				lines = lines.replaceAll(" ", "\n");
 				lines = lines.toLowerCase();
-				String[] tokens = lines.split(" ");
+				String[] tokens = lines.split("\n");
 				for (int i = 0; i < tokens.length; i++) {
-					if (!terms.containsKey(tokens[i])) {
-						terms.put(tokens[i], 1);
-					} else {
-						terms.put(tokens[i], terms.get(tokens[i]) + 1);
+					if (tokens[i].length() > 0) {
+						if (!terms.containsKey(tokens[i])) {
+							terms.put(tokens[i], 1);
+						} else {
+							terms.put(tokens[i], terms.get(tokens[i]) + 1);
+						}	
 					}
 				}
 			});
