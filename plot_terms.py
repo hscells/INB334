@@ -21,8 +21,7 @@ print freq[len(freq)-1]
 print prob[len(prob)-1]
 
 
-plt.scatter(freq, prob)
-plt.xlim(len(freq),0)
+plt.plot(prob)
 plt.title('Probability of Word Occurance')
 plt.ylabel('Probability of Occurance')
 plt.xlabel('Rank')
