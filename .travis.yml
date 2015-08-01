@@ -11,7 +11,12 @@ env:
 
 before_script:
  - cd src
+ - cd week1
  - javac *.java
+ - cd ../
+ - cd week2
+ - javac *.java
+ - cd ../
  - cd ../
  - git config --global user.email "harryscells@gmail.com"
  - git config --global user.name "Travis-CI"
