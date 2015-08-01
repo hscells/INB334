@@ -18,3 +18,9 @@ cacm
 .project
 cacm_tokens
 .datee05.59e
+classifiers/english.conll.4class.distsim.crf.ser.gz
+classifiers/english.conll.4class.distsim.prop
+classifiers/english.muc.7class.distsim.crf.ser.gz
+classifiers/english.muc.7class.distsim.prop
+classifiers/example.serialized.ncc.ncc.ser.gz
+classifiers/example.serialized.ncc.prop
