@@ -1,5 +1,5 @@
 ,Plain Indexing,Stopword Removal,Porter,Porter + Stopword Removal,Krovetz,Krovetz + Stopword Removal
 Vocabulary size (Unique terms),14541,14271,10891,10675,,
-Number of Terms in coll (Tokens),382078,304844,372078,304844,,
+Number of Terms in coll (Tokens),382078,304844,382078,304844,,
 Pointers,199765,162252,192869,155968,,
 Documents,3204,3204,3204,3204,,
