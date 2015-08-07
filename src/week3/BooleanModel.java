@@ -40,9 +40,7 @@ public class BooleanModel {
 		Stream<Map.Entry<Integer, Document>> sorted = documentmap.entrySet().stream().sorted(Map.Entry.comparingByKey());
 		sorted.forEach(doc->{
 			if(doc.getValue().contains(term)) { 
-				vec.add(1);
-			} else { 
-				vec.add(0);
+				vec.set(doc.getKey());
 			}
 		});
 		return vec;
@@ -58,8 +56,13 @@ public class BooleanModel {
 		addDocumentToIndex(document);
 	}
 	
-	public BitSet get(String term) { 
-		return index.get(term);
+	public DocumentList get(String term) { 
+		DocumentList docs = new DocumentList();
+		BitSet l = index.get(term);
+		for(int i = 0; i < l.size(); i++) {
+			if (l.get(i)) { docs.add(documentmap.get(i)); }
+		}
+		return docs;
 	}
 	
 	public int corpusSize(){

@@ -18,4 +18,8 @@ public class DocumentList {
 		return list;
 	}
 	
+	public String toString() {
+		return list.toString();
+	}
+	
 }
