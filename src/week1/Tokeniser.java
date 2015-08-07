@@ -2,6 +2,8 @@ package week1;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -41,7 +43,9 @@ public class Tokeniser {
 			}
 		});	
 		
+		
 		documents.keySet().forEach(document-> {
+			List<String> tokenList = new ArrayList<String>();
 			documents.get(document).forEach(lines -> {
 				lines = lines.replaceAll("<.*>", "");
 				lines = lines.replaceAll("[.,;:+=!@#$%^&*()`{}|\'\"<>~/\\[\\]\\?]+", " ");
@@ -53,6 +57,7 @@ public class Tokeniser {
 				String[] tokens = lines.split("\n");
 				for (int i = 0; i < tokens.length; i++) {
 					if (tokens[i].length() > 0) {
+						tokenList.add(tokens[i]);
 						if (!terms.containsKey(tokens[i])) {
 							terms.put(tokens[i], 1);
 						} else {
@@ -61,6 +66,7 @@ public class Tokeniser {
 					}
 				}
 			});
+			documents.replace(document, tokenList);
 		});
 	}
 
