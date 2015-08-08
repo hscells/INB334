@@ -16,12 +16,14 @@ public class Main {
 		tokeniser.getDocuments().forEach((name,list)->{
 			Document doc = new Document(name,list);
 			model.addDocument(doc);
-			System.out.println(model.corpusSize());
+//			System.out.println(model.size());
 		});
 		
-		System.out.println(model.get("algebraic"));
-		System.out.println(model.get("translators"));
-		System.out.println(model.get("algorithm"));
+		System.out.println(model.query("algebraic"));
+		System.out.println(model.query("translators"));
+		System.out.println(model.query("algorithm"));
+		System.out.println(model.query("algorithm AND rootfinder"));
+		System.out.println(model.query("algorithm NOT rootfinder"));
 		
 	}
 	

@@ -1,25 +1,14 @@
 package week3;
 
-import java.util.ArrayList;
+/**
+ * Extend the ArrayList to store Document objects
+ * @see Document
+ * @author harryscells
+ *
+ */
+public class DocumentList extends java.util.ArrayList<Document> {
 
-public class DocumentList {
+	private static final long serialVersionUID = 1L;
 
-	private ArrayList<Document> list = new ArrayList<Document>();
-	
-	DocumentList() {
-		
-	}
-	
-	public void add(Document document) {
-		list.add(document);
-	}
-	
-	public ArrayList<Document> getList() { 
-		return list;
-	}
-	
-	public String toString() {
-		return list.toString();
-	}
 	
 }
