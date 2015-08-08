@@ -16,7 +16,7 @@ before_script:
 
 after_script:
  - git clone https://github.com/hscells/hscells.github.io.git
- - javadoc -private src/*.java -d hscells.github.io/INB334/doc -bottom "Harry Scells 2015 INB334" > /dev/null 2>&1
+ - javadoc -private -sourcepath src/ -subpackages week1:week2:week3 -d hscells.github.io/INB334/doc -bottom "Harry Scells 2015 INB334" > /dev/null 2>&1
  - cd hscells.github.io
  - git add *
  - git commit -m "updated INB334 javadoc"
