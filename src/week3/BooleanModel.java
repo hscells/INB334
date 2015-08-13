@@ -38,33 +38,15 @@ public class BooleanModel {
 	}
 	
 	/**
-	 * Adds a document to the inverted index
-	 * @param doc a Document object
-	 */
-	private void addDocumentToIndex(Document doc) {
-		doc.getContents().forEach(term->{
-			if (!index.containsKey(index)){
-				addTerm(term);
-			}
-		});
-		index.forEach((name,bitset)->{
-			if (doc.contains(name)) {
-				
-			}
-		});
-	}
-	
-	/**
 	 * Create a vector for a term containing the current document references
 	 * @param term The term to add
-	 * @return
+	 * @return  
 	 */
 	private BitSet createIndexVector(String term) {
 		BitSet vec = new BitSet();
-		Stream<Map.Entry<Integer, Document>> sorted = documentmap.entrySet().stream().sorted(Map.Entry.comparingByKey());
-		sorted.forEach(doc->{
-			if(doc.getValue().contains(term)) { 
-				vec.set(doc.getKey());
+		documentmap.forEach((key,doc)->{
+			if(doc.contains(term)) { 
+				vec.set(key);
 			}
 		});
 		return vec;
@@ -85,7 +67,6 @@ public class BooleanModel {
 	 */
 	public void addDocument(Document document) {
 		documentmap.put(documentmap.size(), document);
-		addDocumentToIndex(document);
 	}
 	
 	/**

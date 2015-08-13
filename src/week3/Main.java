@@ -5,26 +5,33 @@ import java.io.IOException;
 import week1.Tokeniser;
 
 public class Main {
-	
+
 	public static void main(String[] args) throws IOException {
-		
-		Tokeniser tokeniser = new Tokeniser("cacm_small");
+
+		Tokeniser tokeniser = new Tokeniser("cacm");
 		tokeniser.parse();
-		
+
 		BooleanModel model = new BooleanModel();
-		
-		tokeniser.getDocuments().forEach((name,list)->{
-			Document doc = new Document(name,list);
+
+		// By adding the documents separately from the terms, it allows
+		// the binary model to more efficiently add terms, because it 
+		// doesn't have to loop over each term every time a document is added.
+		tokeniser.getDocuments().forEach((name, list) -> {
+			Document doc = new Document(name, list);
 			model.addDocument(doc);
-//			System.out.println(model.size());
 		});
-		
+
+		tokeniser.getTerms().forEach((name, n) -> {
+			model.addTerm(name);
+		});
+
+		System.out.println(model.query("rootfinder"));
 		System.out.println(model.query("algebraic"));
 		System.out.println(model.query("translators"));
 		System.out.println(model.query("algorithm"));
 		System.out.println(model.query("algorithm AND rootfinder"));
 		System.out.println(model.query("algorithm NOT rootfinder"));
-		
+
 	}
-	
+
 }
