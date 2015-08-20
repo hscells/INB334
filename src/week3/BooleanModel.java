@@ -2,6 +2,7 @@ package week3;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.Arrays;
 import java.util.BitSet;
 
@@ -12,10 +13,10 @@ import java.util.BitSet;
  */
 public class BooleanModel {
 
-	private HashMap<String, BitSet> index = new HashMap<String, BitSet>();
-	private HashMap<Integer, Document> documentmap = new HashMap<Integer, Document>();
+	protected HashMap<String, BitSet> index = new HashMap<String, BitSet>();
+	protected HashMap<Integer, Document> documentmap = new HashMap<Integer, Document>();
 	
-	BooleanModel() {
+	protected BooleanModel() {
 		
 	}
 	

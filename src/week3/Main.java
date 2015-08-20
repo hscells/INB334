@@ -16,6 +16,7 @@ public class Main {
 		// By adding the documents separately from the terms, it allows
 		// the boolean model to more efficiently add terms, because it 
 		// doesn't have to loop over each term every time a document is added.
+		long startTime = System.currentTimeMillis();
 		tokeniser.getDocuments().forEach((name, list) -> {
 			Document doc = new Document(name, list);
 			model.addDocument(doc);
@@ -24,7 +25,8 @@ public class Main {
 		tokeniser.getTerms().forEach((name, n) -> {
 			model.addTerm(name);
 		});
-
+		long elapsedTime = System.currentTimeMillis() - startTime;
+		System.out.println(elapsedTime / 1000);
 //		System.out.println(model.query("rootfinder"));
 		System.out.println(model.query("algebraic"));
 		System.out.println(model.query("translators"));

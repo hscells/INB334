@@ -17,7 +17,7 @@ public class Document {
 	 * @param name The filename of the document
 	 * @param contents The contents of the document as a List
 	 */
-	Document(String name, List<String> contents) {
+	protected Document(String name, List<String> contents) {
 		this.name = name;
 		this.contents = contents;
 	}
