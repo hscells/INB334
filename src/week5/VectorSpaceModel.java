@@ -8,9 +8,9 @@ import week3.Document;
  * @author harryscells
  *
  */
-public class BooleanModelVSM extends BooleanModel{
+public class VectorSpaceModel extends BooleanModel{
 
-	BooleanModelVSM() {
+	VectorSpaceModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
