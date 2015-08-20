@@ -2,13 +2,11 @@ package week3;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Arrays;
 import java.util.BitSet;
-import java.util.stream.Stream;
 
 /**
- * Implements the binary model and inverted index structures.
+ * Implements the boolean model and inverted index structures.
  * @author harryscells
  *
  */

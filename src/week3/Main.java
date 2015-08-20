@@ -14,7 +14,7 @@ public class Main {
 		BooleanModel model = new BooleanModel();
 
 		// By adding the documents separately from the terms, it allows
-		// the binary model to more efficiently add terms, because it 
+		// the boolean model to more efficiently add terms, because it 
 		// doesn't have to loop over each term every time a document is added.
 		tokeniser.getDocuments().forEach((name, list) -> {
 			Document doc = new Document(name, list);
@@ -25,7 +25,7 @@ public class Main {
 			model.addTerm(name);
 		});
 
-		System.out.println(model.query("rootfinder"));
+//		System.out.println(model.query("rootfinder"));
 		System.out.println(model.query("algebraic"));
 		System.out.println(model.query("translators"));
 		System.out.println(model.query("algorithm"));
