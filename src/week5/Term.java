@@ -7,23 +7,33 @@ package week5;
  */
 public class Term {
 	
-	private String t;
-	public int frequency;
+	private String term;
+	private double tfidf;
+	private int frequency;
 	
-	Term(String t) {
-		this.t = t;
-		this.frequency = 0;
+	Term(String term, int frequency) {
+		this.term = term;
+		this.frequency = frequency;
+		this.tfidf = 0;
 	}
 	
-	public String get() {
-		return t;
-	}
-	
-	public int frequency() {
+	public int getFrequency() {
 		return this.frequency;
 	}
 	
 	public void setFrequency(int f) {
 		this.frequency = f;
+	}
+	
+	public void setTFIDF(double v) {
+		this.tfidf = v;
+	}
+	
+	public double getTFIDF() {
+		return this.tfidf;
+	}
+	
+	public String toString() {
+		return this.term;
 	}
 }
