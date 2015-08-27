@@ -10,7 +10,7 @@ public class Query {
 		this.vector = vector;
 	}
 	
-	public BitSet getVector() {
+	public BitSet getQueryVector() {
 		return this.vector;
 	}
 

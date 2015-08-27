@@ -32,6 +32,10 @@ public class Term {
 		return this.frequency;
 	}
 	
+	public int getDocumentFrequency(){
+		return this.document_frequency.size();
+	}
+	
 	public int getID() {
 		return this.id;
 	}
