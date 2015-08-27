@@ -2,6 +2,9 @@ package week3;
 
 import java.util.HashMap;
 import java.util.List;
+
+import week5.Model;
+
 import java.util.Arrays;
 import java.util.BitSet;
 
@@ -10,7 +13,7 @@ import java.util.BitSet;
  * @author harryscells
  *
  */
-public class BooleanModel {
+public class BooleanModel implements Model{
 
 	protected HashMap<String, BitSet> index = new HashMap<String, BitSet>();
 	protected HashMap<Integer, Document> documentmap = new HashMap<Integer, Document>();
@@ -23,6 +26,7 @@ public class BooleanModel {
 	 * Get the map of documents
 	 * @return HashMap<Integer, Document> documentmap
 	 */
+	@Override
 	public HashMap<Integer, Document> getDocumentMap(){
 		return documentmap;
 	}
@@ -31,6 +35,7 @@ public class BooleanModel {
 	 * Get the inverted index
 	 * @return HashMap<String, BitSet> index
 	 */
+	@Override
 	public HashMap<String, BitSet> getIndex(){
 		return index;
 	}
@@ -106,6 +111,7 @@ public class BooleanModel {
 	 * @param q
 	 * @return
 	 */
+	@Override
 	public DocumentList query(String q) {
 		List<String> qtok = Arrays.asList(q.toLowerCase().split(" "));
 		if (qtok.size() == 2 || qtok.size() > 3 || qtok.size() < 1) {

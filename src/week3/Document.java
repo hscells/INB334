@@ -1,5 +1,7 @@
 package week3;
 
+import java.util.BitSet;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -11,6 +13,7 @@ public class Document {
 	
 	private String name;
 	private List<String> contents;
+	private BitSet terms;
 	
 	/**
 	 * Document
@@ -20,6 +23,7 @@ public class Document {
 	public Document(String name, List<String> contents) {
 		this.name = name;
 		this.contents = contents;
+		this.setTermVector(new BitSet());
 	}
 	
 	public Boolean contains(String term) {
@@ -32,6 +36,18 @@ public class Document {
 	
 	public String toString(){
 		return this.name;
+	}
+
+	public BitSet getTermVector() {
+		return this.terms;
+	}
+
+	public void setTermVector(BitSet vec) {
+		this.terms = vec;
+	}
+	
+	public int count(String term) {
+		return Collections.frequency(this.contents, term);
 	}
 	
 }
