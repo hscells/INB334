@@ -1,0 +1,1 @@
+trec_terrier.sh -r -Dterrier.index.path=/Users/harryscells/terrier-4.0/var/index_none -Dterrier.index.prefix=data -Dtrec.model=TF_IDF -Dtrec.results.file=/Users/harryscells/Repositories/INB344/week6/src//ap8889_none.txt -Dtrec.topics=/Users/harryscells/terrier-4.0/share/TREC123.topics.51-200.short.full.clean.txt -Dtrec.topics.parser=SingleLineTRECQuery
