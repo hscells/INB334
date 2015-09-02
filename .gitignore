@@ -13,7 +13,6 @@
 hs_err_pid*
 
 # general files that shouldn't be uploaded.
-*.txt
 cacm
 .project
 cacm_tokens
